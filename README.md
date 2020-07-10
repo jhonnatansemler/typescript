@@ -29,7 +29,7 @@ cd typescript
 npm install
 ```
 ## Enjoy
-Now you'll have to just run the NodeJS local application server by executing this command:
+Now you'll have to just run the NodeJS local application server (lite-server) and TypeScript compiler by executing this command:
 ```bash
 npm start
 ```
