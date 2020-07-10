@@ -51,7 +51,25 @@ export class NegociacaoController {
     }
 
     importaDados(){
-        
+
+        function isOk(res: any){
+            if(res.ok){
+                return res;
+            }else{
+                throw new Error(res.statusText);
+            }
+        }
+
+        fetch('http://localhost:8080/dados')
+            .then(res => isOk(res))
+            .then(res => res.json())
+            .then((dados: any[]) => {
+                dados
+                    .map(dado => new Negociacao(new Date(), dado.vezes, dado.montante))
+                    .forEach(negociacao => this._negociacoes.adiciona(negociacao));
+                this._negociacoesView.update(this._negociacoes);
+            })
+            .catch(err => console.log(err.message))
     }
 }
 
