@@ -1,6 +1,6 @@
 import { NegociacoesView, MensagemView } from '../views/index';
 import { Negociacao, Negociacoes, NegociacaoParcial } from '../models/index';
-import { NegociacaoService } from '../services/index';
+import { NegociacaoService, HandlerFunction } from '../services/index';
 import { domInject, throttle } from '../helpers/decorators/index';
 
 export class NegociacaoController {
@@ -54,7 +54,7 @@ export class NegociacaoController {
     @throttle()
     importaDados(){
 
-        function isOk(res: any){
+        const isOk = (res: Response) => {
             if(res.ok){
                 return res;
             }else{
@@ -67,6 +67,10 @@ export class NegociacaoController {
                 negociacoes.forEach(negociacao => 
                     this._negociacoes.adiciona(negociacao));
                 this._negociacoesView.update(this._negociacoes);
+            })
+            .catch((err: Error)=> {
+                this._mensagemView.update('Não foi possível importar os dados.');
+                console.log(err.message);
             });
     }
 }
