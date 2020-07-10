@@ -1,18 +1,24 @@
 # typescript
 TypeScript Learning Project. This project is my version of the Alura's TypeScript training given by Flavio Henrique de Souza Almeida (https://cursos.alura.com.br/user/flavio-almeida),
 originally called "alurabank". It was made focusing in TypeScript basic concepts development.
+## Technologies usage on this project
+This project deals with the following technologies:
+ - TypeScript (Version ^2.3.2) (https://github.com/microsoft/TypeScript)
+ - JQuery (Version ^2.0.42) (https://github.com/jquery/jquery)
+ - Bootstrap (https://github.com/twbs/bootstrap)
+ - SystemJS (https://github.com/systemjs/systemjs)
 ## How to run this project
 The project dependencies are:
  - Git (Client);
  - NPM
  
-### On Ubuntu/Debian distro
+### Install dependencies on Debian based distro
 To run this project on Debian based distro you'll have to install the **Git** client and **NPM** packages:
 ```shell
 sudo apt-get install git
 sudo apt-get install npm
 ```
-### On Windows 
+### Install dependencies on Windows 
 You'll have to download and install **Git** client and **NPM**, here are the links to download:
  - https://nodejs.org/en/download/
  - https://git-scm.com/downloads
